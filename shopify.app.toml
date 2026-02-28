@@ -2,7 +2,7 @@
 
 client_id = "d118e09ea6f91f2732a7fd9dadbcb60e"
 name = "Studio Moreira"
-application_url = "https://example.com"
+application_url = "https://shopifystudiomoreiradev.vercel.app"
 embedded = true
 
 [build]
@@ -25,4 +25,8 @@ api_version = "2026-04"
 scopes = "write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [ 
+  "https://shopifystudiomoreiradev.vercel.app/auth/callback",
+  "https://shopifystudiomoreiradev.vercel.app/auth/shopify/callback",
+  "https://shopifystudiomoreiradev.vercel.app/api/auth/callback"
+]
