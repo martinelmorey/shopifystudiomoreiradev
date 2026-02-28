@@ -1,24 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run setup && npm run build",
-  "installCommand": "npm install",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    }
-  ],
-  "routes": [
-    {
-      "src": "^/build/(.*)$",
-      "dest": "/build/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
-  "env": {
-    "SHOPIFY_APP_URL": "https://$VERCEL_URL"
-  }
+  "buildCommand": "npx prisma generate && npx prisma migrate deploy && remix vite:build",
+  "installCommand": "npm install --legacy-peer-deps",
+  "framework": "remix"
 }
