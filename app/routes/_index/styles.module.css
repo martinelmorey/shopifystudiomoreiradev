@@ -1,73 +1,170 @@
 .index {
-  align-items: center;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #121526;
+  /* Dark navy background from screenshot */
+  color: #fff;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 2rem;
+  align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  padding: 1rem;
-}
-
-.heading,
-.text {
-  padding: 0;
-  margin: 0;
-}
-
-.text {
-  font-size: 1.2rem;
-  padding-bottom: 2rem;
 }
 
 .content {
-  display: grid;
-  gap: 2rem;
+  width: 100%;
+  max-width: 650px;
+  background: transparent;
+  text-align: center;
+}
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -1px;
+}
+
+.brandGreen {
+  color: #8ce119;
+  /* Neon green from the screenshots */
+}
+
+.text {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  /* Soft gray */
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formBox {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
 }
 
 .form {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 0 auto;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .label {
-  display: grid;
-  gap: 0.2rem;
-  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
   text-align: left;
-  font-size: 1rem;
+  gap: 0.5rem;
+}
+
+.labelSpan {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e2e8f0;
 }
 
 .input {
-  padding: 0.4rem;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  /* Pill shape like the main button */
+  color: #fff;
+  font-size: 1.05rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  border-color: #8ce119;
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 0 2px rgba(140, 225, 25, 0.2);
+}
+
+.inputHint {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-left: 1rem;
 }
 
 .button {
-  padding: 0.4rem;
+  background-color: #8ce119;
+  /* Brand neon green */
+  color: #0b1a03;
+  /* Very dark green almost black for contrast */
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 9999px;
+  /* Pill shape */
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  width: 100%;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background-color: #9cf525;
 }
 
 .list {
   list-style: none;
   padding: 0;
-  padding-top: 3rem;
-  margin: 0;
-  display: flex;
+  margin: 4rem 0 0 0;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
-}
-
-.list > li {
-  max-width: 20rem;
   text-align: left;
 }
 
-@media only screen and (max-width: 50rem) {
+@media (min-width: 640px) {
   .list {
-    display: block;
+    grid-template-columns: 1fr 1fr;
   }
+}
 
-  .list > li {
-    padding-bottom: 1rem;
-  }
+.listItem {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.icon {
+  flex-shrink: 0;
+  color: #8ce119;
+  width: 28px;
+  height: 28px;
+  background: rgba(140, 225, 25, 0.1);
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.featureTitle {
+  display: block;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+}
+
+.featureDesc {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
 }
