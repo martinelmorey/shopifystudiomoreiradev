@@ -1,9 +1,11 @@
 {
   "version": 2,
+  "buildCommand": "npm run setup && npm run build",
+  "installCommand": "npm install",
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/remix"
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
